@@ -1,0 +1,26 @@
+{
+  "name": "",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "engines": {
+    "npm": "4.1.2",
+    "node": "7.6"
+  },
+  "scripts": {
+    "test": "mocha test",
+    "start": "babel-node server.js",
+    "build": "babel "
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "babel-cli": "6.24.0",
+    "babel-env": "2.3.1",
+    "babel-eslint": "7.2.1",
+    "babel-preset-stage-3": "6.22.0",
+    "eslint": "3.19.0",
+    "eslint-plugin-mocha": "4.9.0",
+    "nodemon": "1.11.0"
+  }
+}
