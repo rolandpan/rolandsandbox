@@ -21,6 +21,7 @@
     "babel-preset-stage-3": "6.22.0",
     "eslint": "3.19.0",
     "eslint-plugin-mocha": "4.9.0",
-    "nodemon": "1.11.0"
+    "nodemon": "1.11.0",
+    "deepdialog": "git+ssh://git@github.com:aneilbaboo/deepdialog-node-client.git#ac6a4dfcdb64fdda24ad1e7242dc1595a39bc1f4"
   }
 }
