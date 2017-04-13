@@ -2,15 +2,17 @@
   "name": "",
   "version": "0.0.1",
   "description": "",
-  "main": "server.js",
+  "main": "lib/server.js",
   "engines": {
     "npm": "4.1.2",
     "node": "7.6"
   },
   "scripts": {
     "test": "mocha test",
-    "start": "babel-node server.js",
-    "build": "babel "
+    "start": "nodemon src/server.js --exec babel-node",
+    "build": "babel src -d lib/",
+    "serve": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100  lib/server.js",
+    "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "UNLICENSED",
@@ -18,10 +20,15 @@
     "babel-cli": "6.24.0",
     "babel-env": "2.3.1",
     "babel-eslint": "7.2.1",
-    "babel-preset-stage-3": "6.22.0",
     "eslint": "3.19.0",
     "eslint-plugin-mocha": "4.9.0",
-    "nodemon": "1.11.0",
-    "deepdialog": "git+ssh://git@github.com:aneilbaboo/deepdialog-node-client.git#ac6a4dfcdb64fdda24ad1e7242dc1595a39bc1f4"
+    "nodemon": "1.11.0"
+  },
+  "dependencies": {
+    "babel-env": "2.3.1",
+    "babel-preset-stage-3": "6.22.0",
+    "babel-runtime": "6.23.0",
+    "deepdialog": "git+ssh://git@github.com:aneilbaboo/deepdialog-node-client.git#ac6a4dfcdb64fdda24ad1e7242dc1595a39bc1f4",
+    "dotenv": "4.0.0"
   }
 }
