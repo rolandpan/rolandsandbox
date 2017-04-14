@@ -12,7 +12,9 @@
     "start": "nodemon src/server.js --exec babel-node",
     "build": "babel src -d lib/",
     "serve": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100  lib/server.js",
-    "heroku-postbuild": "npm run build"
+    "console": "node --require babel-register --require babel-polyfill",
+    "heroku-prebuild": "bash scripts/preinstall.sh",
+    "heroku-postbuild": "bash scripts/postinstall.sh"
   },
   "author": "",
   "license": "UNLICENSED",
