@@ -38,3 +38,7 @@ jspm_packages
 
 # Ignore babel compiled code
 lib
+
+# Ignore .env .env.*
+.env
+.env.*
