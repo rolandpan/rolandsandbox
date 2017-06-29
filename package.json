@@ -19,18 +19,16 @@
   "author": "",
   "license": "UNLICENSED",
   "devDependencies": {
-    "babel-cli": "6.24.0",
-    "babel-env": "2.3.1",
+    "babel-cli": "6.24.1",
+    "babel-preset-env": "1.5.1",
+    "babel-preset-stage-3": "6.22.0",
     "babel-eslint": "7.2.1",
     "eslint": "3.19.0",
     "eslint-plugin-mocha": "4.9.0",
-    "nodemon": "1.11.0"
+    "nodemon": "1.11.0",
   },
   "dependencies": {
-    "babel-env": "2.3.1",
-    "babel-preset-stage-3": "6.22.0",
-    "babel-runtime": "6.23.0",
-    "deepdialog": "git+ssh://git@github.com:aneilbaboo/deepdialog-node-client.git#ac6a4dfcdb64fdda24ad1e7242dc1595a39bc1f4",
+    "deepdialog": "git+ssh://git@github.com:aneilbaboo/deepdialog-node-client.git#c906435a6e779af3c1d8b70cef5c271a9fb4b60d",
     "dotenv": "4.0.0"
   }
 }
