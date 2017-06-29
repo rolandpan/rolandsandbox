@@ -6,7 +6,7 @@ log.level = process.env.LOGGER_LEVEL || 'info';
 log.info('appId: %s appSecret: %s host: %s',
   process.env.DEEPDIALOG_APPID,
   process.env.DEEPDIALOG_APPSECRET ? `${process.env.DEEPDIALOG_APPSECRET.slice(0,5)}...` : undefined,
-  process.env.HOSTNAME);
+  process.env.HOST_URL);
 
 var app = new App({
   appId: process.env.DEEPDIALOG_APPID,
