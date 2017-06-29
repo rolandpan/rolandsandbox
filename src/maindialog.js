@@ -5,7 +5,7 @@
 // session with a user
 //
 
-import {Dialog, NLPModel} from 'deepdialog';
+import {FlowDialog, NLPModel} from 'deepdialog';
 
 export const MainNLP = new NLPModel({
   name: 'MainNLP',
@@ -13,23 +13,19 @@ export const MainNLP = new NLPModel({
   accessToken: process.env.APIAI_ACCESSKEY_SECRET
 });
 
-export const MainDialog = new Dialog({
+export const MainDialog = new FlowDialog({
   name: 'MainDialog',
-  description: 'The top level dialog of your bot'
+  nlpModelName: 'MainNLP', // if you want an NLP engine
+  flows: {
+    onStart: [
+      "Hello",
+      {
+        text: "Test quick reply buttons",
+        actions: {
+          yes: "You said yes!",
+          no: "You said no."
+        }
+      }
+    ]
+  }
 });
-
-MainDialog.nlpModelName = 'MainNLP';
-
-// MainDialog.onStart(async function (session) {
-//
-// });
-// MainDialog.onIntent(async (session, entities) {
-//   session.respond("Hello");
-// });
-//
-// Basic intent handlers
-//
-
-// MainDialog.onIntent('help', async function (session) {
-//   await session.start('MyHelpDialog');
-// });
