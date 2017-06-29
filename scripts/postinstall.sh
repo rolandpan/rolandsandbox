@@ -13,7 +13,5 @@ if [ "$GIT_SSH_KEY" != "" ]; then
   export GIT_SSH_KEY=0
 
   echo "Transpiling bot code..."
-  cd node_modules/deepdialog
-  . ./scripts/postinstall.sh
-  cd -
+  npm run build
 fi
