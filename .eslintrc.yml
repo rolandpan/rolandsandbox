@@ -5,8 +5,11 @@ env:
 extends: 'eslint:recommended'
 parser: "babel-eslint"
 parserOptions:
+  ecmaVersion: 6
+  sourceType: module
   ecmaFeatures:
-        experimentalObjectRestSpread: true
+    experimentalObjectRestSpread: true
+    modules: true
 plugins:
   - mocha
 rules:

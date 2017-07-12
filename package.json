@@ -25,10 +25,10 @@
     "babel-eslint": "7.2.1",
     "eslint": "3.19.0",
     "eslint-plugin-mocha": "4.9.0",
-    "nodemon": "1.11.0",
+    "nodemon": "1.11.0"
   },
   "dependencies": {
-    "deepdialog": "git+ssh://git@github.com:aneilbaboo/deepdialog-node-client.git#906435a6e779af3c1d8b70cef5c271a9fb4b60d",
+    "deepdialog": "git+ssh://git@github.com:aneilbaboo/deepdialog-node-client.git#76129d008b5cf7c76757671f77ad02ca0ae14bac",
     "dotenv": "4.0.0"
   }
 }
