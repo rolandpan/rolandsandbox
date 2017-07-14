@@ -43,3 +43,6 @@ lib
 .env.*
 .env
 !.env.sample
+
+# Webstorm
+.idea/
