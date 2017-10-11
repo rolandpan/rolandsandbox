@@ -1,0 +1,10 @@
+{
+  "basics.view_account_num": "You can find your full account number within your electronic statements online. To view these, log in to online banking and select “Online Statements.” You can then preview each account statement and view your account numbers.",
+  "basics.view_which_statements": "You can view, print and archive statements from the past 24 months. To receive a copy by mail, please call our Customer Care Center at 1-877 I BANK NW (1-877-422-6569), 8 a.m. to 8 p.m. ET weekdays.",
+  "basics.change_pwd_or_uid":"Your password, user ID and any contact information can be changed easily within your online banking profile. To update your information, log in to your online banking account, select the “Settings” link at the top right-hand corner of the screen and then click “Profile.”",
+  "basics.change_security_questions":"Security questions can be changed within your settings online. To change your security questions, log in to your account and then select “Settings” in the top right corner. Your security questions are located within “Security” and can be changed at any time.",
+  "basics.download_acct_info":"Yes, you can download your account information to view it in Money, QuickBooks or Quicken. After logging in to online banking, select the account you want to download, click \"More Actions\" and then \"Export Transactions.\" Choose Money, Quickbooks or Quicken from the “Format Type” dropdown menu.",
+  "basics.how_much_trx_history":"You can view account activity from the past six months.",
+  "basics.nickname_accts":"Yes, log in to online banking, select \"Settings\" from the main menu and then click “Accounts.” From there you can select which account you want to personalize. You also can choose if you want to hide that particular account from appearing in online banking.",
+  "basics.what_is_id_verification":"Identify verification is an additional security step that Nationwide takes to ensure your account is safe. We’ll send you a verification code by text message or phone call."
+}

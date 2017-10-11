@@ -1,0 +1,47 @@
+onStart:
+- Hello
+- text: "Dialog test"
+  actions:
+    show me a gif:
+      type: "image"
+      mediaUrl: "https://zippy.gfycat.com/HopefulEasygoingCony.gif"
+      mediaType: "image/gif"
+    search gif:
+      -
+        start:
+          - PromptDialog
+          -
+            text: "Enter search term:"
+        then:
+          - "You typed {{value}}"
+          -
+            start:
+              - PromptDialog
+              -
+                text: "How about another term?"
+            then: "you entered {{value}}"
+    carousel test:
+        type: "list"
+        items:
+          -
+            id: "item1"
+            title: "this is item1"
+            description: "this is item1 desc"
+            mediaUrl: "https://zippy.gfycat.com/HopefulEasygoingCony.gif"
+            mediaType: "image/gif"
+            actions:
+              website:
+                uri: "http://www.deepdialog.ai"
+              Friends:
+                type: "share"
+          -
+            id: "item2"
+            title: "this is item2"
+            description: "this is item2 desc"
+            mediaUrl: "https://zippy.gfycat.com/HopefulEasygoingCony.gif"
+            mediaType: "image/gif"
+            actions:
+              website:
+                uri: "http://www.deepdialog.ai"
+              Friends:
+                type: "share"

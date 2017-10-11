@@ -14,7 +14,8 @@
     "serve": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100  lib/server.js",
     "console": "node --require babel-register --require babel-polyfill",
     "heroku-prebuild": "bash scripts/preinstall.sh",
-    "heroku-postbuild": "bash scripts/postinstall.sh"
+    "heroku-postbuild": "bash scripts/postinstall.sh",
+    "daily": "node --require babel-register --require babel-polyfill src/dailyscript.js"
   },
   "author": "",
   "license": "UNLICENSED",
@@ -30,7 +31,7 @@
     "nodemon": "1.11.0"
   },
   "dependencies": {
-    "deepdialog": "git+ssh://git@github.com:aneilbaboo/deepdialog-node-client.git#39eb45af3d4c8dccf9d61d20b887f655a8687332",
+    "deepdialog": "git+ssh://git@github.com:aneilbaboo/deepdialog-node-client.git#9ec8b0b3c16a190ffbf72b9ca8c5ddb791549472",
     "dotenv": "4.0.0"
   }
 }

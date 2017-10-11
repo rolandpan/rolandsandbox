@@ -1,6 +1,9 @@
 import './loadenv';
 import {App, log} from 'deepdialog';
-import {MainDialog, MainNLP} from './maindialog';
+import {MainDialog,MainNLP} from './maindialog';
+import {PromptDialog} from './promptdialog';
+import {SearchGifsDialog} from './searchgifsdialog';
+
 log.level = process.env.LOGGER_LEVEL || 'info';
 
 log.info('appId: %s appSecret: %s host: %s',
@@ -22,7 +25,7 @@ process.on('unhandledRejection', function (e) {
 });
 
 app.addNLPModels(MainNLP);
-app.addDialogs(MainDialog);
+app.addDialogs(MainDialog, PromptDialog, SearchGifsDialog);
 app.server.start(process.env.PORT, async function () {
   log.info('Bot started');
   await app.save();

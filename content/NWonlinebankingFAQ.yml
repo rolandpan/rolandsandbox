@@ -1,0 +1,83 @@
+onStart:
+- I am a demo bot for helping answer questions about online banking.
+- I am based on the "frequently asked questions" (FAQ) page of a major bank.
+- What question can I answer for you?
+- wait: 20
+- Searching the FAQ...
+- wait: 2
+- Your password, user ID and any contact information can be changed easily within your online banking profile.
+- wait: 3
+- To update your information, log in to your online banking account, select the “Settings” link at the top right-hand corner of the screen and then click “Profile.”
+- wait: 3
+- What else can I answer for you?
+- wait: 18
+- Searching the FAQ...
+- wait: 2
+- text: "I think I understand what you mean, but just in case please select from the following:"
+- wait : 3
+- type: "list"
+  items:
+    item1:
+      title: "How do I change my online banking password and user ID?"
+      description: "Your password, user ID and any contact information can be changed easily within your online banking profile..."
+      actions:
+        Select:
+          id: "1"
+          type: 'postback'
+          text: 'Select'
+          then: []
+    item2:
+      title: "How do I change my security questions?"
+      description: "Security questions can be changed within your settings online. To change your security questions, log in to... "
+      actions:
+        Select:
+          id: "2"
+          type: "postback"
+          text: "Select"
+          then: []
+    item3:
+      title: "Can I cancel or place a stop payment on a bill payment?"
+      description: "Yes, if the payment has not yet been processed or the paper check has not yet posted to the checking account..."
+      actions:
+        Select:
+          id: "3"
+          type: "postback"
+          text: "Select"
+          then: []
+- wait: 10
+- Thanks.  I'll remember to associate "How do I change my online banking password and user ID?" with your question "Is it possible to change my user name?".
+- wait: 4
+- What else can I answer for you?
+- wait: 18
+- Searching the FAQ...
+- wait: 2
+- Your password, user ID and any contact information can be changed easily within your online banking profile.
+- wait: 3
+- To update your information, log in to your online banking account, select the “Settings” link at the top right-hand corner of the screen and then click “Profile.”
+- wait: 3
+- What else can I answer for you?
+- wait: 18
+- Searching the FAQ...
+- wait: 2
+- text: "I'm sorry, I couldn't find anything related to that question."
+- wait: 3
+- text: "You can browse the FAQs or add a new FAQ."
+  actions:
+    Browse FAQs:
+      - text: "These are the topics I currently cover.  Please select:"
+        actions:
+          Basics: "Basics"
+          Transfers: "Transfers"
+          Pay Bills: "Bill Pay"
+          Pay People: "Pay People"
+          None of the above:
+            - text: "Would you like to request a new entry for your question?"
+              actions:
+                Sure:
+                  - "Thank you.  I've put in a request to create an entry for: "
+                  - "\"Where is the nearest branch?\""
+                No thanks: "Ok."
+    Add a new FAQ:
+      - "Thank you.  I've put in a request to create an FAQ for: "
+      - "\"Where is the nearest branch?\""
+    Skip it: "Ok"

@@ -1,0 +1,11 @@
+onStart:
+- I'm a simple subcription bot for Gfycat!  Search for gifs and I'll send you a similar ones every day.
+- text: "Wanna get started?"
+  actions:
+    Sure!:
+      - Awesome!
+      - When you find a search term you like, just click or type "subscribe", and I'll send you a new Gif every day
+      - To stop your subscription just tell me to "stop" or click "unsubscribe"
+      -
+        start: SearchGifsDialog
+    Not now: "No worries!"
