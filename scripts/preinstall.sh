@@ -2,7 +2,7 @@
 # For accessing private Github repos
 # Generates an SSH config file for connections if a config var exists.
 # See: http://stackoverflow.com/a/29677091/305149
-if [ "$GIT_SSH_KEY" != "" ]; then
+if [ "$GIT_DEPLOY_KEY" != "" ]; then
   echo "Detected SSH key for git. Adding SSH config" >&1
   echo "" >&1
 
@@ -13,7 +13,7 @@ if [ "$GIT_SSH_KEY" != "" ]; then
   fi
 
   # Load the private key into a file.
-  echo $GIT_SSH_KEY | base64 --decode > ~/.ssh/deploy_key
+  echo $GIT_DEPLOY_KEY | base64 --decode > ~/.ssh/deploy_key
 
   # Change the permissions on the file to
   # be read-only for this user.
