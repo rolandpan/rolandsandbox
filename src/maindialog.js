@@ -16,7 +16,7 @@ export const MainNLP = new NLPModel({
   accessToken: process.env.APIAI_ACCESSKEY_SECRET
 });
 
-var flowObject = loadFileSync("onboardflow.YML");
+var flowObject = loadFileSync("onboardflow.yml");
 var intents = loadFileSync("intents.json");
 
 var apiaiRequest = {
