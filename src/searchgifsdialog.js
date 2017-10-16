@@ -28,7 +28,7 @@ SearchGifsDialog.onResult('PromptDialog', 'get_search_term', async function(sess
 
   await displayGifs(session, gifresults.slice(0,SEARCH_RESULT_NUMBER));
 
-  await sleep(10000*SEARCH_RESULT_NUMBER);
+  await sleep(7500*SEARCH_RESULT_NUMBER);
 
   await session.set('SearchTerm', text);
   await session.save();
@@ -50,6 +50,11 @@ SearchGifsDialog.onResult('PromptDialog', 'get_search_term', async function(sess
         type: 'reply',
         text: `Search more Gifs`,
         payload: "search"
+      },
+      {
+        type: 'reply',
+        text: `All set for now.`,
+        payload: "exit"
       },
       {
         type: 'reply',
@@ -94,6 +99,28 @@ SearchGifsDialog.onIntent('search_gifs', async function(session) {
   await session.start('PromptDialog', 'get_search_term', {text: "Please enter a search term to see Gifs:"});
 });
 
+SearchGifsDialog.onIntent('understood', async function(session) {
+  await session.send(randomChoice([
+    "Let me know if I can do anything else for you!",
+    "I'm here if you need.  Just lmk how I can help."
+  ]));
+});
+
+SearchGifsDialog.onIntent('help', async function(session) {
+  await session.send(randomChoice([
+    "Sorry you're having trouble.  Just type \"search\" to see gifs.",
+    "Apologies if you're having trouble.  A good way to get started is to type \"search\" to find gifs."
+  ]));
+});
+
+
+SearchGifsDialog.onRecovery( async function(session) {
+  await session.send(randomChoice()[
+    "So sorry I didn't get your meaning.  I'm a simple bot that can only understand if you want to subscribe, search or unsubscribe.  ",
+    "Sorry I don't understand...at present I can only deal with subscriptions, searching gifs or unsubscribing.",
+    "My apologies, I don't understand your meaning.  I can deal with subscriptions, searching gifs, or unsubscribing."
+  ]);
+});
 
 //
 // functions
@@ -107,7 +134,10 @@ async function subscribe(session) {
 async function unsubscribe(session) {
   await session.set('SubscriptionOptIn', false);
   await session.save();
-  await session.send(randomChoice(["Ok, turning off subscriptions for you.", "You won't get any more Gifs.", "Shutting off your Gif subscription"]));
+  await session.send(randomChoice([
+    "Ok, turning off subscriptions for you.",
+    "You won't get any more Gifs.",
+    "Shutting off your Gif subscription"]));
   await session.send({
     text: randomChoice([
       "Would you like to search for more gifs?",

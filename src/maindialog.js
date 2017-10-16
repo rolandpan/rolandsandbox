@@ -133,10 +133,19 @@ basics.what_is_id_verification
 
 MainDialog.onText('reset', resetBot);
 MainDialog.onText('Reset', resetBot);
+MainDialog.onText(any, resetBot);
 
+async function resetBot(session) {
+  await session.send("Restarting...");
+  await session.reset();
+  await MainDialog.startFlow('onStart', session);
+}
+
+/*
 MainDialog.onText(any, async function (session) {
   session.start('SearchGifsDialog', 'restart');
 });
+*/
 
 MainDialog.onText('set', async function (session){
   var viewedGifs = [];
@@ -152,7 +161,7 @@ MainDialog.onText('push', async function (session){
   session.save();
 });
 
-// array.indexOf(xx) to check if in viewedGifs
+/*
 
 MainDialog.onText('test', async function (session, text){
   log.debug("flowObject : %j", flowObject);
@@ -180,13 +189,7 @@ MainDialog.onText('test', async function (session, text){
 addIntentResponses(MainDialog, intents);
 
 MainDialog.onText('Hi', resetBot);
-MainDialog.onText('reset', resetBot);
-MainDialog.onText('Reset', resetBot);
-async function resetBot(session) {
-  await session.send("Restarting...");
-  await session.reset();
-  await MainDialog.startFlow('onStart', session);
-}
+
 
 function addIntentResponses(dialog, intentMap) {
   for (let intent in intentMap) {
@@ -197,3 +200,5 @@ function addIntentResponses(dialog, intentMap) {
 async function request(inputRequest) {
   return rp(inputRequest);
 }
+
+*/

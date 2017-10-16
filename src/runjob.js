@@ -33,7 +33,11 @@ async function runJob() {
       var gifResults = [];
 
       gifResults = await getGifs(session, session.globals.SearchTerm);
-      await session.send(randomChoice(["Your Gif is here, enjoy!","Sending your daily Gif.","Enjoy your Gif!","Here's your daily Gif."]));
+      await session.send(randomChoice([
+        "Your Gif is here, enjoy!",
+        "Sending your daily Gif.",
+        "Enjoy your Gif!",
+        "Here's your daily Gif."]));
       await displayGifs(session, randomChoice(gifResults));
     }
   });
