@@ -126,6 +126,13 @@ SearchGifsDialog.onIntent('greeting', async function(session) {
   ]));
 });
 
+SearchGifsDialog.onText('reset', async function(session){
+  await session.finish();
+});
+SearchGifsDialog.onText('Reset', async function(session){
+  await session.finish();
+});
+
 
 SearchGifsDialog.onPayload(any, async function(session) {
   await session.send(randomChoice([

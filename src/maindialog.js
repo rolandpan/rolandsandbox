@@ -134,11 +134,14 @@ async function resetBot(session) {
   await MainDialog.startFlow('onStart', session);
 }
 
+MainDialog.onResult('SearchGifsDialog',resetBot);
+
+
 /*
 MainDialog.onText(any, async function (session) {
   session.start('SearchGifsDialog', 'restart');
 });
-*/
+
 
 MainDialog.onText('set', async function (session){
   var viewedGifs = [];
@@ -153,6 +156,7 @@ MainDialog.onText('push', async function (session){
   session.set('ViewedGifs',viewedGifs);
   session.save();
 });
+*/
 
 /*
 
