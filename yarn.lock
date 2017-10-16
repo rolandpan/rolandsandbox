@@ -1006,9 +1006,9 @@ deep-is@~0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
 
-"deepdialog@git+ssh://git@github.com:aneilbaboo/deepdialog-node-client.git#39eb45af3d4c8dccf9d61d20b887f655a8687332":
-  version "0.1.1"
-  resolved "git+ssh://git@github.com:aneilbaboo/deepdialog-node-client.git#39eb45af3d4c8dccf9d61d20b887f655a8687332"
+"deepdialog@git+ssh://git@github.com/aneilbaboo/deepdialog-node-client.git#9ec8b0b3c16a190ffbf72b9ca8c5ddb791549472":
+  version "0.3.2"
+  resolved "git+ssh://git@github.com/aneilbaboo/deepdialog-node-client.git#9ec8b0b3c16a190ffbf72b9ca8c5ddb791549472"
   dependencies:
     babel-cli "6.24.1"
     babel-preset-env "1.6.0"
@@ -1018,6 +1018,7 @@ deep-is@~0.1.3:
     compression "1.6.2"
     express "4.14.0"
     express-promise-router "1.1.1"
+    fast-levenshtein "^2.0.6"
     jwt-simple "0.5.1"
     lokka "1.7.0"
     lokka-transport-http "1.6.1"
@@ -1362,7 +1363,7 @@ eyes@0.1.x:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/eyes/-/eyes-0.1.8.tgz#62cf120234c683785d902348a800ef3e0cc20bc0"
 
-fast-levenshtein@~2.0.4:
+fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
 
@@ -1632,13 +1633,9 @@ http-signature@~1.1.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-iconv-lite@0.4.15:
+iconv-lite@0.4.15, iconv-lite@~0.4.13:
   version "0.4.15"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.15.tgz#fe265a218ac6a57cfe854927e9d04c19825eddeb"
-
-iconv-lite@~0.4.13:
-  version "0.4.18"
-  resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.18.tgz#23d8656b16aae6742ac29732ea8f0336a4789cf2"
 
 ignore-by-default@^1.0.0:
   version "1.0.1"
@@ -2058,11 +2055,7 @@ micromustache@5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/micromustache/-/micromustache-5.2.0.tgz#df131ae0077c54a7cfc6d920094e1627bb678569"
 
-"mime-db@>= 1.27.0 < 2":
-  version "1.29.0"
-  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.29.0.tgz#48d26d235589651704ac5916ca06001914266878"
-
-mime-db@~1.27.0:
+"mime-db@>= 1.27.0 < 2", mime-db@~1.27.0:
   version "1.27.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.27.0.tgz#820f572296bbd20ec25ed55e5b5de869e5436eb1"
 

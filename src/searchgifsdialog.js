@@ -24,6 +24,7 @@ SearchGifsDialog.onResult('PromptDialog', 'get_search_term', async function(sess
   await session.send(`Searching for gifs related to \"${text}\"...`);
 
   gifresults = await getGifs(session, text);
+  log.debug("gifresults : %j", gifresults);
 
   await displayGifs(session, gifresults.slice(0,SEARCH_RESULT_NUMBER));
 
