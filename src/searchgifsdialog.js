@@ -118,6 +118,15 @@ SearchGifsDialog.onIntent('image_input', async function(session) {
   ]));
 });
 
+SearchGifsDialog.onIntent('greeting', async function(session) {
+  await session.send(randomChoice([
+    "Hi!",
+    "Hello.",
+    "Good to be with you today."
+  ]));
+});
+
+
 SearchGifsDialog.onPayload(any, async function(session) {
   await session.send(randomChoice([
     "So sorry I didn't get your meaning.  I'm a simple bot that can only understand if you want to subscribe, search or unsubscribe.",
