@@ -11,7 +11,7 @@
     "test": "mocha test",
     "start": "nodemon src/server.js --exec babel-node --config nodemon.json",
     "build": "babel src -d lib/",
-    "serve": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100  server.js",
+    "serve": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100  src/server.js",
     "console": "node --require babel-register --require babel-polyfill",
     "heroku-prebuild": "bash scripts/preinstall.sh",
     "heroku-postbuild": "bash scripts/postinstall.sh",
