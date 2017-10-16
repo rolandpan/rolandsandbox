@@ -26,13 +26,6 @@ var apiaiRequest = {
   }
 };
 
-/*
-export const MainDialog = new Dialog({
-  name: 'MainDialog',
-  description: 'The top level dialog of your bot'
-});
-*/
-
 export const MainDialog = new FlowDialog({
   name: 'MainDialog',
   flows: flowObject
@@ -133,10 +126,10 @@ basics.what_is_id_verification
 
 MainDialog.onText('reset', resetBot);
 MainDialog.onText('Reset', resetBot);
-//MainDialog.onText(any, resetBot);
+MainDialog.onText(any, resetBot);
 
 async function resetBot(session) {
-  await session.send("Restarting...");
+  //await session.send("Restarting...");
   await session.reset();
   await MainDialog.startFlow('onStart', session);
 }
