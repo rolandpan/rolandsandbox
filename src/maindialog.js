@@ -133,7 +133,7 @@ basics.what_is_id_verification
 
 MainDialog.onText('reset', resetBot);
 MainDialog.onText('Reset', resetBot);
-MainDialog.onText(any, resetBot);
+//MainDialog.onText(any, resetBot);
 
 async function resetBot(session) {
   await session.send("Restarting...");

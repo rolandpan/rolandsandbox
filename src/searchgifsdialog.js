@@ -113,8 +113,13 @@ SearchGifsDialog.onIntent('help', async function(session) {
   ]));
 });
 
+SearchGifsDialog.onIntent('image_input', async function(session) {
+  await session.send(randomChoice([
+    "Thumbs up to you too!"
+  ]));
+});
 
-SearchGifsDialog.onRecovery( async function(session) {
+SearchGifsDialog.onPayload(any, async function(session) {
   await session.send(randomChoice()[
     "So sorry I didn't get your meaning.  I'm a simple bot that can only understand if you want to subscribe, search or unsubscribe.  ",
     "Sorry I don't understand...at present I can only deal with subscriptions, searching gifs or unsubscribing.",
