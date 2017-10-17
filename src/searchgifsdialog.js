@@ -25,44 +25,67 @@ SearchGifsDialog.onResult('PromptDialog', 'get_search_term', async function(sess
 
   gifresults = await getGifs(session, text);
 
-  await displayGifs(session, gifresults.slice(0,SEARCH_RESULT_NUMBER));
+  if ((gifresults.length>SEARCH_RESULT_NUMBER)&(!isString(gifresults))) {
+    await displayGifs(session, gifresults.slice(0,SEARCH_RESULT_NUMBER));
 
-  await sleep(7500*SEARCH_RESULT_NUMBER);
+    await sleep(7500*SEARCH_RESULT_NUMBER);
 
-  await session.set('SearchTerm', text);
-  await session.save();
+    await session.set('SearchTerm', text);
+    await session.save();
 
-  await session.send({
-    text: randomChoice([
-      "what do you think?",
-      "how did you like these?",
-      "here you go...what next?",
-      "here they are...what do you want to do?"
-    ]),
-    actions: [
-      {
-        type: 'reply',
-        text: `Subscribe to \"${text}\"`,
-        payload: "subscribe"
-      },
-      {
-        type: 'reply',
-        text: `Search more Gifs`,
-        payload: "search"
-      },
-      {
-        type: 'reply',
-        text: `All set for now.`,
-        payload: "exit"
-      },
-      {
-        type: 'reply',
-        text: `Unsubscribe`,
-        payload: "unsubscribe"
-      }
-    ]
-  });
-
+    await session.send({
+      text: randomChoice([
+        "what do you think?",
+        "how did you like these?",
+        "here you go...what next?",
+        "here they are...what do you want to do?"
+      ]),
+      actions: [
+        {
+          type: 'reply',
+          text: `Subscribe to \"${text}\"`,
+          payload: "subscribe"
+        },
+        {
+          type: 'reply',
+          text: `Search more Gifs`,
+          payload: "search"
+        },
+        {
+          type: 'reply',
+          text: `All set for now.`,
+          payload: "exit"
+        },
+        {
+          type: 'reply',
+          text: `Unsubscribe`,
+          payload: "unsubscribe"
+        }
+      ]
+    });
+  }
+  else {
+    await session.send({
+      text: randomChoice([
+        "Sorry, but that search returned too few results.",
+        "Hmmm...couldn't find much for that search term.",
+        "That search term didn't return any results.",
+        "I didn't find any Gifs for that term."
+      ]),
+      actions: [
+        {
+          type: 'reply',
+          text: `Search again`,
+          payload: "search"
+        },
+        {
+          type: 'reply',
+          text: `All set for now.`,
+          payload: "exit"
+        }
+      ]
+    });
+  }
 });
 
 SearchGifsDialog.onPayload('subscribe', async function (session) {
