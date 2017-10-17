@@ -217,7 +217,7 @@ export async function getGifs(session, searchterm) {
   };
 
   rawResults = await rp(requestObject);
-
+  log.debug("Search results raw: %j", rawResults);
   if (rawResults.length>0) {
     parsedResults = JSON.parse(rawResults);
     gifResults = await parsedResults.gfycats.map(function (obj){ return obj.gifUrl;});
@@ -267,7 +267,7 @@ export async function getAccessToken( refreshtoken ) {
   };
 
   response = await rp(tokenRequest);
-  log.debug("response : %j", response);
+  log.debug("Token response : %j", response);
   token = response.access_token;
   return token;
 }
