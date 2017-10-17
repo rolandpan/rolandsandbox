@@ -217,9 +217,8 @@ export async function getGifs(session, searchterm) {
   };
 
   rawResults = await rp(requestObject);
-  log.debug("Search results raw: %j", rawResults);
-  if (rawResults.length>0) {
-    parsedResults = JSON.parse(rawResults);
+  parsedResults = JSON.parse(rawResults);
+  if (!(parsedResults.errorMessage == 'No search results')) {
     gifResults = await parsedResults.gfycats.map(function (obj){ return obj.gifUrl;});
   }
 
