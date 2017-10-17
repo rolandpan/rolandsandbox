@@ -217,8 +217,11 @@ export async function getGifs(session, searchterm) {
   };
 
   rawResults = await rp(requestObject);
-  parsedResults = JSON.parse(rawResults);
-  gifResults = await parsedResults.gfycats.map(function (obj){ return obj.gifUrl;});
+
+  if (rawResults.length>0) {
+    parsedResults = JSON.parse(rawResults);
+    gifResults = await parsedResults.gfycats.map(function (obj){ return obj.gifUrl;});
+  }
 
   return gifResults;
 }
