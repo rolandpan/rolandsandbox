@@ -218,8 +218,16 @@ export async function getGifs(session, searchterm) {
 
   rawResults = await rp(requestObject);
   parsedResults = JSON.parse(rawResults);
+
+
+  //
+  // select url from object
+  // gifURL = full size
+  // gif100px = 100 pixel
+  // max1mbGif  = 1MB
+  //
   if (!(parsedResults.errorMessage == 'No search results')) {
-    gifResults = await parsedResults.gfycats.map(function (obj){ return obj.gifUrl;});
+    gifResults = await parsedResults.gfycats.map(function (obj){ return obj.gif100px;});
   }
 
   return gifResults;
@@ -251,7 +259,7 @@ export async function getAccessToken( refreshtoken ) {
   var response;
   var token;
 
-  log.debug("refresh token: %j", refreshtoken);
+  log.debug("Gfycat refresh token: %j", refreshtoken);
 
   var tokenRequest = {
     method: 'POST',
