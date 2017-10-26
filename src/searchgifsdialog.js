@@ -227,7 +227,7 @@ export async function getGifs(session, searchterm) {
   // max1mbGif  = 1MB
   //
   if (!(parsedResults.errorMessage == 'No search results')) {
-    gifResults = await parsedResults.gfycats.map(function (obj){ return obj.gif100px;});
+    gifResults = await parsedResults.gfycats.map(function (obj){ return obj.max1mbGif;});
   }
 
   return gifResults;
