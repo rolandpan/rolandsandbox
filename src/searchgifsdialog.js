@@ -93,7 +93,7 @@ SearchGifsDialog.onPayload('subscribe', async function (session) {
 });
 
 SearchGifsDialog.onPayload('search', async function (session) {
-  await session.start('PromptDialog', 'get_search_term', {text: "Please enter a search term to see Gifs:"});
+  await session.start('PromptDialog', 'get_search_term', {text: "Please enter a search term to see related Gifs:"});
 });
 
 SearchGifsDialog.onPayload('unsubscribe', async function (session) {

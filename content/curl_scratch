@@ -186,3 +186,16 @@ curl -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1
 
 Refresh Request:
 curl -v -XPOST -d '{"client_id":"2_ExM9aN", "client_secret": "RgT6_xtSg8JNQF9o1Y0jtrjCDDR7UXzIo76TwASQlIlAADC7YeKKoGWElc0xgmPd","refresh_token":"aBfZJjzH7YJpo9FqpNwDsUYnlNpq7sCl" ,"grant_type": "refresh"}' https://api.gfycat.com/v1/oauth/token
+
+
+Birthday Gifs:
+
+https://thumbs.gfycat.com/NegligibleAffectionateInganue-max-1mb.gif
+https://thumbs.gfycat.com/DishonestBlandFrigatebird-max-1mb.gif
+AnxiousOpenFruitbat
+DaringCarefulBluegill
+NeatMelodicIggypops
+ClearGiganticChamois
+ArtisticEllipticalJanenschia
+ParchedClosedAfricanpiedkingfisher - chuck norris approves
+MeagerFineCoyote - girl in a box
