@@ -93,7 +93,7 @@ SearchGifsDialog.onPayload('subscribe', async function (session) {
 });
 
 SearchGifsDialog.onPayload('search', async function (session) {
-  await session.start('PromptDialog', 'get_search_term', {text: "Please enter a search term to see related Gifs:"});
+  await session.start('PromptDialog', 'get_search_term', {text: "Enter search term to see Gifs:"});
 });
 
 SearchGifsDialog.onPayload('unsubscribe', async function (session) {
@@ -118,7 +118,7 @@ SearchGifsDialog.onIntent('want_subscription', async function(session) {
 });
 
 SearchGifsDialog.onIntent('search_gifs', async function(session) {
-  await session.start('PromptDialog', 'get_search_term', {text: "Please enter a search term to see Gifs:"});
+  await session.start('PromptDialog', 'get_search_term', {text: "Enter search term to see Gifs:"});
 });
 
 SearchGifsDialog.onIntent('understood', async function(session) {
